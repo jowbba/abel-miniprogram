@@ -37,12 +37,6 @@ App({
       }
     })
 
-    wx.getSystemInfo({
-      success: function(res) {
-        that.globalData.system = res
-        console.log(res)
-        },
-    })
   },
   globalData: {
     userInfo: null

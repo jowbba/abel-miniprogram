@@ -4,22 +4,13 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     system: getApp().globalData.system
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
   onLoad: function () {
-    console.log(this)
-    console.log(this.data.system.screenHeight)
-    console.log(this.data.system.statusBarHeight)
+    wx.navigateTo({
+      url: '/pages/tutorial/tutorial',
+    })
+    console.log(this.data.videoHeight)
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -46,14 +37,5 @@ Page({
         }
       })
     }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  },
-  onReady: function(e) {}
+  }
 })

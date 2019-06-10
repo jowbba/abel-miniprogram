@@ -1,9 +1,4 @@
 <!--index.wxml-->
-<view class="container" style='height: {{system.screenHeight}}px;width: {{system.screenWidth}}px'>
-  <view style='height: {{system.statusBarHeight}}px;width:100%'/>
-  <text class='title'>这是一个测试标题</text>
-  <!-- <text class='des'>WS215i设备在出厂时已经配备WISNUC系统，并可自动升级。</text>
-  <text class='des'>此外，WISNUC系统作为开源软件，X86用户可在http://bbs.wisnuc.com获得关于系统安装和使用的相关资料，过程中如遇到任何问题，您可在论坛上提交，将会得到及时的帮助解答。</text> -->
-  <video style='height: {{system.screenHeight - 44 - system.statusBarHeight}}px;width: {{9*system.screenHeight/16}}px' id='video2' src='https://www.wisnuc.com/files/test.mp4' objectFit='cover'/>
-  
+<view class="container" >
+ 
 </view>

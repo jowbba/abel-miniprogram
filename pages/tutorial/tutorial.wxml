@@ -1,0 +1,19 @@
+<!--pages/tutorial/tutorial.wxml-->
+<view>
+  <view class='type'>
+    <view data-type='pc' bindtap='toggleType'>pc客户端</view>
+    <view data-type='app' bindtap='toggleType'>app客户端</view>
+  </view>
+  <view class='content'>
+
+  </view>
+
+  <text wx:if="{{errMessage !== ''}}">获取服务器列表失败</text>
+
+  <view wx:if="{{type=='pc'}}" wx:for="{{pc.list}}" wx:for-item="class" wx:key="type">
+    <text>{{class.type}}</text>
+    <view wx:for="{{class.list}}" wx:key="name">
+      <text data-detail="{{item}}" data-size="{{pc}}" bindtap='navTo'>{{item.name}}</text>
+    </view>
+  </view>
+</view>
