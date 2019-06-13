@@ -1,19 +1,32 @@
 <!--pages/tutorial/tutorial.wxml-->
 <view>
+  <!-- tab -->
   <view class='type'>
-    <view data-type='pc' bindtap='toggleType'>pc客户端</view>
-    <view data-type='app' bindtap='toggleType'>app客户端</view>
+    <template is='tab' data="{{i:0, name: 'pc客户端', tabWidth, activeStyle, index}}"/>
+    <template is='tab' data="{{i:1, name: 'app客户端', tabWidth, activeStyle, index}}"/>
+    <view class='indicator' style="left:{{index==0?0:'50%'}}"/>
   </view>
+
   <view class='content'>
-
+      <template is='list' data="{{data: index=='0'?pc:app}}" />
+      <text wx:if="{{errMessage !== ''}}">获取服务器列表失败</text>
   </view>
 
-  <text wx:if="{{errMessage !== ''}}">获取服务器列表失败</text>
-
-  <view wx:if="{{type=='pc'}}" wx:for="{{pc.list}}" wx:for-item="class" wx:key="type">
-    <text>{{class.type}}</text>
-    <view wx:for="{{class.list}}" wx:key="name">
-      <text data-detail="{{item}}" data-size="{{pc}}" bindtap='navTo'>{{item.name}}</text>
+  <template name='list'>
+    <view class='function-part' wx:for="{{data.list}}" wx:for-item="class" wx:key="type">
+      <text class='title'>{{class.type}}</text>
+      <view wx:for="{{class.list}}" wx:key="name">
+        <text class='sub-title' data-detail="{{item}}" data-size="{{data}}" bindtap='navTo'>{{item.name}}</text>
+      </view>
     </view>
-  </view>
+  </template>
+
+  <template name='tab'>
+    <view style="width: {{tabWidth}}px"  class='tab {{index==i?"select":""}}'>
+      <view  data-index="{{i}}" bindtap='toggleType'>{{name}}</view>
+      <view class='ripple' wx:if="{{index==i && activeStyle}}" style="{{activeStyle}}">
+        <view></view>
+      </view>
+    </view>
+  </template>
 </view>

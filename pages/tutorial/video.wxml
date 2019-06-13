@@ -1,4 +1,4 @@
 <!--index.wxml-->
 <view class="container" >
-  <video muted style='height: {{videoHeight}}px;width: {{videoWidth}}px' id='video2' src='{{url}}' objectFit='contain'/>
+  <video muted controls style='height: {{videoHeight}}px;width: {{videoWidth}}px' src='{{url}}' objectFit='contain'/>
 </view>

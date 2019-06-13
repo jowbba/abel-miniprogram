@@ -1,38 +1,33 @@
-// pages/tutorial/video.js
+// pages/faq/faq.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    url: "",
-    name: "",
-    width: "",
-    height: "",
-    videoWidth: "",
-    videoHeight: ""
+    list: [],
+    index: 0,
+    windowHeight: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 读取参数，及手机屏幕尺寸
-    this.setData(options)
+    wx.setNavigationBarTitle({
+      title: 'faq'
+    })
+    
     let res = wx.getSystemInfoSync()
-    let { windowWidth, windowHeight } = res
-    wx.setNavigationBarTitle({ title: this.data.name })
-    // 根据长宽比/屏幕尺寸 决定播放器尺寸
-    if (this.data.width == 4) 
-      this.setData({
-        videoWidth: windowWidth,
-        videoHeight: windowWidth*3/4 
-      })
-    else 
-      this.setData({
-        videoWidth: 9/16*windowHeight,
-        videoHeight: windowHeight
-      })
+    let { windowHeight } = res
+
+    wx.request({
+      url: 'https://www.wisnuc.com/faq.json',
+      success: res => {
+        let { data } = res.data
+        this.setData({list:data, windowHeight})
+      }
+    })
   },
 
   /**
@@ -82,5 +77,12 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  select: function(event) {
+    let { index } = this.data
+    let { idx } = event.currentTarget.dataset
+    if (idx == index) idx = -1
+    this.setData({index: idx})
   }
 })

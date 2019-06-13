@@ -1,0 +1,14 @@
+<view class='frame' style="height: {{windowHeight}}px;">
+  <view wx:for="{{list}}" wx:key='title' wx:for-index='idx' class='row {{idx == index?"selected":""}}'>
+    <view class='header' data-idx='{{idx}}' bindtap='select'>
+      <view class='title'>
+        <text>{{item.title}}</text>
+      </view>
+      <view class='arrow'>
+        <image src='/images/arrow.svg'/>
+        <view class='ripple'/>
+      </view>
+    </view>
+    <view class='content'>{{item.content}}</view>
+  </view>
+</view>

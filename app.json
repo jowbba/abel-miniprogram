@@ -1,9 +1,8 @@
 {
   "pages": [
+    "pages/faq/faq",
     "pages/tutorial/tutorial",
-    "pages/tutorial/video",
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
