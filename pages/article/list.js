@@ -1,32 +1,18 @@
-// pages/faq/faq.js
+// pages/article/list.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list: [],
-    index: -1,
-    windowHeight: 0,
-    currentHeight: 0
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({ title: 'faq' })
-    
-    let res = wx.getSystemInfoSync()
-    let { windowHeight } = res
 
-    wx.request({
-      url: 'https://www.wisnuc.com/faq.json',
-      success: res => {
-        let { data } = res.data
-        this.setData({list:data, windowHeight})
-      }
-    })
   },
 
   /**
@@ -76,18 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  select: function(event) {
-    let { index } = this.data
-    let { idx } = event.currentTarget.dataset
-    let query = wx.createSelectorQuery()
-    query.select(`#content${idx}`).boundingClientRect()
-    query.exec(res=> {
-      let { height } = res[0]
-      if (idx == index) idx = -1
-      this.setData({ index: idx, currentHeight: height })
-    })
-    
   }
 })

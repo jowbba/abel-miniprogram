@@ -1,8 +1,11 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/faq/faq",
     "pages/tutorial/tutorial",
-    "pages/index/index"
+    "pages/article/article",
+    "pages/article/list"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

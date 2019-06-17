@@ -9,6 +9,9 @@
         <view class='ripple'/>
       </view>
     </view>
-    <view class='content'>{{item.content}}</view>
+    <view class='content' style="height: {{idx==index?currentHeight:0}}px">
+      <text id='content{{idx}}'> {{item.content}}
+      </text>  
+    </view>
   </view>
 </view>

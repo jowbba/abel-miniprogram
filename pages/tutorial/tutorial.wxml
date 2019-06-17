@@ -2,8 +2,9 @@
 <view>
   <!-- tab -->
   <view class='type'>
-    <template is='tab' data="{{i:0, name: 'pc客户端', tabWidth, activeStyle, index}}"/>
-    <template is='tab' data="{{i:1, name: 'app客户端', tabWidth, activeStyle, index}}"/>
+    <template is='tab' data="{{i:0, name: 'app客户端', tabWidth, activeStyle, index}}"/>
+    <template is='tab' data="{{i:1, name: 'pc客户端', tabWidth, activeStyle, index}}"/>
+    
     <view class='indicator' style="left:{{index==0?0:'50%'}}"/>
   </view>
 
