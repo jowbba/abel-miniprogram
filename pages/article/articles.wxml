@@ -1,0 +1,3 @@
+<view>
+  <list prop-navTo='/pages/article/article' prop-data="{{articles}}"/>
+</view>

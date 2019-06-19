@@ -1,0 +1,24 @@
+.container {
+  box-sizing: border-box;
+  padding: 0px 15px 20px;
+}
+
+.function-part {
+  margin-top: 18px; 
+}
+
+.title {
+  display: block;
+  color: #353535;
+  font-size: 17pt;
+  /* line-height: 1; */
+  margin-bottom: 13px;
+}
+
+.sub-title {
+  display: block;
+  font-size: 13pt;
+  /* line-height: 16pt; */
+  margin-bottom: 8px;
+  color: #576b95;
+}

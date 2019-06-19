@@ -1,0 +1,8 @@
+<view class='container'>
+  <view class='function-part' wx:for="{{propData.list}}" wx:for-item="class" wx:key="type">
+    <text class='title'>{{class.type}}</text>
+    <block wx:for="{{class.list}}" wx:key="name" class='sub-title-container'>
+      <text class='sub-title' data-detail="{{item}}" data-size="{{propData}}" bindtap='navTo'>{{item.title}}</text>
+    </block>
+  </view>
+</view>
