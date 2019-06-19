@@ -4,13 +4,11 @@ const app = getApp()
 
 Page({
   data: {
-    windowHeight: wx.getSystemInfoSync().windowHeight
+    windowHeight: wx.getSystemInfoSync().windowHeight,
+    heroHeight: wx.getSystemInfoSync().windowHeight / 3,
+    rowHeight: (wx.getSystemInfoSync().windowHeight - wx.getSystemInfoSync().windowHeight / 3 -5) / 4
   },
   onLoad: function () {
-    // wx.navigateTo({
-    //   url: '/pages/tutorial/tutorial',
-    // })
-    console.log(this.data.videoHeight)
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

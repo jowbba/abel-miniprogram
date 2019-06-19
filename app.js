@@ -39,6 +39,7 @@ App({
 
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    baseUrl: "https://www.wisnuc.com"
   }
 })

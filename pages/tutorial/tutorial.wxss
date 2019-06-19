@@ -2,7 +2,7 @@
   width: 100%;
   height: 48px;
   position: relative;
-  background: #2196f3;
+  background: #009788;
 }
 
 .tab {
@@ -49,27 +49,6 @@
   height: 100%;
   border-radius: 50%;
   background-color: currentColor;
-}
-
-.content {
-  padding: 10px;
-}
-
-.function-part {
-  margin-bottom: 20px;
-}
-
-.title {
-  font-size: 22px;
-}
-
-.sub-title {
-  font-size: 17px;
-  color: rgba(0, 0, 0, .88)
-}
-
-.sub-title {
-  padding-left: 10px;
 }
 
 @keyframes ripple

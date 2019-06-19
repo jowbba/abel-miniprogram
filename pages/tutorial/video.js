@@ -21,7 +21,7 @@ Page({
     this.setData(options)
     let res = wx.getSystemInfoSync()
     let { windowWidth, windowHeight } = res
-    wx.setNavigationBarTitle({ title: this.data.name })
+    wx.setNavigationBarTitle({ title: this.data.title })
     // 根据长宽比/屏幕尺寸 决定播放器尺寸
     if (this.data.width == 4) 
       this.setData({
@@ -39,7 +39,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    console.log(this.data)
   },
 
   /**

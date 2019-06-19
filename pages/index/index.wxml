@@ -2,22 +2,22 @@
 <view class="container" >
   
 
-  <view class='header' style="height: {{windowHeight/ 3}}px">
+  <view class='header' style="height: {{heroHeight}}px">
     <image src='/images/kitty.png' mode='aspectFit'/>
   </view>
 
   <view class='content'>
     <view class='colume'> 
-      <navigator url='/pages/tutorial/tutorial'>
+      <navigator url='/pages/tutorial/tutorial' style="height: {{rowHeight}}px">
         <text>使用指南</text>
       </navigator>
-      <navigator url='/pages/faq/faq'>
+      <navigator url='/pages/faq/faq' style="height: {{rowHeight}}px">
         <text>FAQ</text>
       </navigator>
-      <navigator>
+      <navigator style="height: {{rowHeight}}px">
         <text>购买</text>
       </navigator>
-      <navigator url='/pages/article/list'>
+      <navigator url='/pages/article/articles' style="height: {{rowHeight}}px">
         <text>玩转口袋网盘</text>
       </navigator>
     </view>

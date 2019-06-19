@@ -9,18 +9,10 @@
   </view>
 
   <view class='content'>
-      <template is='list' data="{{data: index=='0'?pc:app}}" />
+      <list prop-navTo='/pages/tutorial/video' prop-data="{{index=='0'?app:pc}}"/>
       <text wx:if="{{errMessage !== ''}}">获取服务器列表失败</text>
   </view>
 
-  <template name='list'>
-    <view class='function-part' wx:for="{{data.list}}" wx:for-item="class" wx:key="type">
-      <text class='title'>{{class.type}}</text>
-      <view wx:for="{{class.list}}" wx:key="name">
-        <text class='sub-title' data-detail="{{item}}" data-size="{{data}}" bindtap='navTo'>{{item.name}}</text>
-      </view>
-    </view>
-  </template>
 
   <template name='tab'>
     <view style="width: {{tabWidth}}px"  class='tab {{index==i?"select":""}}'>

@@ -4,6 +4,7 @@ Page({
   /**
    * 页面的初始数据
    */
+
   data: {
     windowWidth: 0,
     tabWidth: 0,
@@ -20,9 +21,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title: '使用指南'
-    })
+    wx.setNavigationBarTitle({ title: '使用指南' })
 
     wx.getSystemInfo({
       success: res => {
@@ -48,24 +47,14 @@ Page({
           success: (res1) => {
             res1.data.list.forEach(item => item.open = true)
             this.setData({ pc: res.data, app: res1.data })
-            console.log(this.data.pc, this.data.app)
+            console.log(this.data)
           }
         })
       }
     })
   },
 
-  navTo: function(event) {
-    let { name, url } = event.currentTarget.dataset.detail
-    let { width, height} = event.currentTarget.dataset.size
-    url = `${this.data.baseUrl}${url}`
-    wx.navigateTo({
-      url: `/pages/tutorial/video?url=${url}&name=${name}&width=${width}&height=${height}`,
-    })
-  },
-
   toggleType: function(event) {
-    console.log(event)
     this.setData({ activeStyle: ''})
     let { windowWidth } = this.data
     let { index } = event.currentTarget.dataset
@@ -76,7 +65,6 @@ Page({
     let a = x > this.data.tabWidth / 2?0:this.data.tabWidth
     let b = y > 48 / 2?0:48
     let radius = Math.sqrt(Math.pow(Math.abs(x-a), 2) + Math.pow(y-b, 2))
-    console.log(x, y , a, b)
     activeStyle += `transform: scale(0);`
     activeStyle += `width: ${radius*2}px;`
     activeStyle += `height: ${radius*2}px;`
