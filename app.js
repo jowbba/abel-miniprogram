@@ -40,6 +40,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    baseUrl: "https://www.wisnuc.com"
+    baseUrl: "https://www.wisnuc.com/miniprogram/test"
   }
 })

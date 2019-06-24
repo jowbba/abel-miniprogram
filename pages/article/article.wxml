@@ -1,2 +1,12 @@
-<!--pages/article/article.wxml-->
-<text>pages/article/article.wxml</text>
+<view class='container'>
+  <block wx:for="{{data}}" wx:key="index">
+    <view class='title' wx:if="{{item.type == 'title'}}">{{item.content}}</view>
+    <view class='subTitle' wx:if="{{item.type == 'subTitle'}}">{{item.content}}</view>
+    <view class='section-header' wx:if="{{item.type == 'sectionHeader'}}">{{item.content}}</view>
+    <view class='paragraph' wx:if="{{item.type == 'paragraph'}}"><text>{{item.content}}</text></view>
+    <image class='image' mode='widthFix' src='{{item.url}}' wx:if="{{item.type == 'image'}}" bindtap='viewImage' data-url='{{item.url}}'/>
+    <view class='tip' wx:if="{{item.type == 'tip'}}"><text>{{item.content}}</text></view>
+    <view class='remarks' wx:if="{{item.type == 'remarks'}}">{{item.content}}</view>
+    <view class='highLight' wx:if="{{item.type == 'highLight'}}">{{item.content}}</view>
+  </block>
+</view>

@@ -22,7 +22,7 @@ Page({
     wx.setNavigationBarTitle({ title: '玩转口袋网盘' })
     // 获取PC
     wx.request({
-      url: `${getApp().globalData.baseUrl}/article/articleList.json`,
+      url: `${getApp().globalData.baseUrl}/article/article.json`,
       success: (res) => {
         this.setData({ articles: res.data })
         console.log(this.data)

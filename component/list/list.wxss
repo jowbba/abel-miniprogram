@@ -22,3 +22,19 @@
   margin-bottom: 8px;
   color: #576b95;
 }
+
+.function-part {
+  position: relative;
+}
+
+.sub-title {
+  position: relative;
+  padding-left: 23px;
+}
+
+.sub-title::before {
+  content: '•';
+  position: absolute;
+  left: 8px;
+  top: 0px;
+}

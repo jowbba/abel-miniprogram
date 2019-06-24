@@ -11,7 +11,6 @@ Page({
     active: false,
     activeStyle: '',
     index: 0,
-    baseUrl: 'https://www.wisnuc.com',
     pc: {},
     app: {},
     errMessage: ""
@@ -38,12 +37,12 @@ Page({
   onReady: function () {
     // 获取PC
     wx.request({
-      url: `${this.data.baseUrl}/pc/pc.json`,
+      url: `${getApp().globalData.baseUrl}/pc/pc.json`,
       success: (res) => {
         res.data.list.forEach(item => item.open = true)
         // 获取APP
         wx.request({
-          url: `${this.data.baseUrl}/app/app.json`,
+          url: `${getApp().globalData.baseUrl}/app/app.json`,
           success: (res1) => {
             res1.data.list.forEach(item => item.open = true)
             this.setData({ pc: res.data, app: res1.data })
